@@ -42,7 +42,11 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/31b4aad7-89d4-4cd6-876c-bd529462d259"
+      "url": "https://u.expo.dev/31b4aad7-89d4-4cd6-876c-bd529462d259",
+      "checkAutomatically": "NEVER",
+      "requestHeaders": {
+        "expo-channel-name": "staging"
+      }
     }
   }
 }
