@@ -1,5 +1,5 @@
 import { useEffect, useCallback, useState } from "react";
-import { Button, Text, View } from "react-native";
+import { Alert, Button, Text, View } from "react-native";
 import * as Updates from "expo-updates";
 
 type Branch = string;
@@ -14,8 +14,19 @@ export default function Index() {
   // TODO: persist the selected branch
   const selectBranch = useCallback(async (branch: Branch) => {
     await Updates.setExtraParamAsync("branch", branch);
-    await Updates.fetchUpdateAsync();
-    await Updates.reloadAsync();
+    const result = await Updates.fetchUpdateAsync();
+    Alert.alert("Update downloaded",
+      JSON.stringify(result),
+      [
+        {
+          text: "OK",
+          onPress: () => {
+            Updates.reloadAsync();
+          },
+        },
+        { text: "Cancel", style: "cancel" },
+      ],
+    );
   }, []);
 
   const fetchBranches = useCallback(async () => {
@@ -41,10 +52,11 @@ export default function Index() {
       }}
     >
       <Text>
-        Currently running:{" "}
-        {currentlyRunning.updateId ? currentlyRunning.updateId : "no update"} /{" "}
-        {currentlyRunning.createdAt?.toString()}
+        Currently running: {currentlyRunning.updateId ?? "no updateId"} /{" "}
+        {currentlyRunning.createdAt?.toString() ?? "no createdAt"}
       </Text>
+
+      <Text>hi</Text>
 
       <View style={{ marginTop: 16 }}>
         <Text style={{ fontWeight: "bold" }}>Branches</Text>
@@ -57,7 +69,9 @@ export default function Index() {
           title={branch}
         />
       ))}
-      <Button title="Fetch branches" onPress={fetchBranches} />
+
+      <View style={{ marginTop: 16 }} />
+      <Button title="Fetch branches" color="green" onPress={fetchBranches} />
     </View>
   );
 }
