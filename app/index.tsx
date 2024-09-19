@@ -15,18 +15,15 @@ export default function Index() {
   const selectBranch = useCallback(async (branch: Branch) => {
     await Updates.setExtraParamAsync("branch", branch);
     const result = await Updates.fetchUpdateAsync();
-    Alert.alert("Update downloaded",
-      JSON.stringify(result),
-      [
-        {
-          text: "OK",
-          onPress: () => {
-            Updates.reloadAsync();
-          },
+    Alert.alert("Update downloaded", JSON.stringify(result), [
+      {
+        text: "OK",
+        onPress: () => {
+          Updates.reloadAsync();
         },
-        { text: "Cancel", style: "cancel" },
-      ],
-    );
+      },
+      { text: "Cancel", style: "cancel" },
+    ]);
   }, []);
 
   const fetchBranches = useCallback(async () => {
