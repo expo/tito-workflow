@@ -132,8 +132,7 @@ We generally recommend using EAS CLI to do this, because we do not document or c
 
 ### Undocumented GraphQL API
 
-It is possible to use our undocumented GraphQL API to get a list of branches, but this is not generally intended for public usage and we don't commit to any API stability. It may change in the future without notice. The following is an example of how you can query the GraphQL API to get a list of branches:
-
+It is possible to use our undocumented GraphQL API to get a list of branches, but this is not generally intended for public usage and we don't commit to any API stability. It may change in the future without notice. With that in mind, the following is an example of how you can (at the time of writing) query the GraphQL API to get a list of branches:
 
 ```ts
 const query = `
@@ -162,6 +161,9 @@ async function fetchBranches() {
   });
 
   const result = await response.json();
+
+  // Do something with the result, such as send it as a response to the client
+  return result;
 }
 ```
 
