@@ -1,7 +1,7 @@
 # How to add staging previews to your app
 
-> [!IMPORTANT]
-> The feature described here is in an expeirmental state and is subject to change. We believe this is a valuable feature and we will be working to make it stable and easier to use.
+> [!CAUTION]
+> The feature described here is in an expeirmental state and is subject to change. We believe this is a valuable feature and we will be working to make it stable and easier to use. If you plan on trying it out, please reach out to brent@expo.dev, we would love to chat with you about it.
 
 This repository includes a simple app that demonstrates how to use EAS Update to preview different branches in a release build in a staging environment (without [using expo-dev-client](https://docs.expo.dev/eas-update/expo-dev-client/)). This is useful to allow non-technical users to preview changes to your app before they are merged into the main branch. To run the example app, run `yarn` and then `yarn expo run:ios --configuration release` or `yarn expo run:android --variant release`.
 
@@ -132,7 +132,7 @@ We generally recommend using EAS CLI to do this, because we do not document or c
 
 ### Undocumented GraphQL API
 
-You can also use the GraphQL API to get a list of branches, but we don't commit to any public API contract for it so it may change in the future without notice. The following is an example of how you can query the GraphQL API to get a list of branches:
+It is possible to use our undocumented GraphQL API to get a list of branches, but this is not generally intended for public usage and we don't commit to any API stability. It may change in the future without notice. The following is an example of how you can query the GraphQL API to get a list of branches:
 
 
 ```ts
