@@ -11,7 +11,6 @@ export default function Index() {
   const [branches, setBranches] = useState<Branch[]>([]);
   const { currentlyRunning } = Updates.useUpdates();
 
-  // TODO: persist the selected branch
   const selectBranch = useCallback(async (branch: Branch) => {
     await Updates.setExtraParamAsync("branch", branch);
     const result = await Updates.fetchUpdateAsync();
@@ -53,7 +52,7 @@ export default function Index() {
         {currentlyRunning.createdAt?.toString() ?? "no createdAt"}
       </Text>
 
-      <Text>hi</Text>
+      <Text>hello!</Text>
 
       <View style={{ marginTop: 16 }}>
         <Text style={{ fontWeight: "bold" }}>Branches</Text>

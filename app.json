@@ -20,7 +20,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.brents.titoworkflow"
     },
     "web": {
       "bundler": "metro",
@@ -43,11 +44,7 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/31b4aad7-89d4-4cd6-876c-bd529462d259",
-      "checkAutomatically": "NEVER",
-      "requestHeaders": {
-        "expo-channel-name": "staging"
-      }
+      "url": "https://u.expo.dev/31b4aad7-89d4-4cd6-876c-bd529462d259"
     }
   }
 }
