@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > The feature described here is in an expeirmental state and is subject to change. We believe this is a valuable feature and we will be working to make it stable and easier to use.
 
-This repository includes a simple app that demonstrates how to use EAS Update to preview different branches in a release build in a staging environment (without [using expo-dev-client](https://docs.expo.dev/eas-update/expo-dev-client/)). This is useful to allow non-technical users to preview changes to your app before they are merged into the main branch.
+This repository includes a simple app that demonstrates how to use EAS Update to preview different branches in a release build in a staging environment (without [using expo-dev-client](https://docs.expo.dev/eas-update/expo-dev-client/)). This is useful to allow non-technical users to preview changes to your app before they are merged into the main branch. To run the example app, run `yarn` and then `yarn expo run:ios --configuration release` or `yarn expo run:android --variant release`.
 
 The following steps walk you through how to add the same functionality to the staging version of your own app.
 
